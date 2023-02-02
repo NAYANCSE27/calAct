@@ -1,9 +1,10 @@
 import './App.css';
+import InputCollect from './input/inputCollect';
 
 function App() {
   return (
     <div className="App">
-        <h1>Congratulations everyone</h1>
+        <InputCollect />
     </div>
   );
 }
