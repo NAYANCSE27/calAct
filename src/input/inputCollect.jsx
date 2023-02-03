@@ -3,6 +3,9 @@ import './inputCollect.css';
 
 function InputCollect(){
     // let number1, number2;
+
+    const [result, setResult] = useState(0);
+
     const [num1, setNum1] = useState(0);
     const firstNumber = (event)=>{
         setNum1(Number(event.target.value));
@@ -14,8 +17,23 @@ function InputCollect(){
     }
 
     function addNumbers(){
-        let ans = num1+num2;
-        console.log(ans);
+        setResult(num1 + num2);
+    }
+
+    function subNumbers(){
+        setResult(num1 - num2);
+    }
+
+    function mulNumbers(){
+        setResult(num1 * num2);
+    }
+
+    function divNumbers(){
+        setResult(num1 / num2);
+    }
+
+    function modNumbers(){
+        setResult(num1 % num2);
     }
 
     return (
@@ -26,15 +44,15 @@ function InputCollect(){
                 <input onChange={secondNumber} placeholder='Second Number' type="number" />
             </div>
             <div className="operator">
-                <button onClick={addNumbers()}>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>%</button>
+                <button onClick={addNumbers}>+</button>
+                <button onClick={subNumbers}>-</button>
+                <button onClick={mulNumbers}>*</button>
+                <button onClick={divNumbers}>/</button>
+                <button onClick={modNumbers}>%</button>
             </div>
 
             <div className='output'>
-                <h1>This is for output..</h1>
+                <h1>Answer: {result}</h1>
             </div>
         </div>
     );
